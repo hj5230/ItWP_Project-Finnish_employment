@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Statistic portal</title>
+    <link rel="stylesheet" href="src/styles.css">
+    <link rel="stylesheet" href="src/leaflet/leaflet.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script> -->
+    <script src="src/bootstrap/bootstrap.min.js"></script>
+    <script src="src/leaflet/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/frappe-charts@1.2.4/dist/frappe-charts.min.iife.js"></script>
+    
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/index/">StatisticPortal</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+          <ul class="nav navbar-nav">
+            <li><a href="readme.html/">ReadMe</a></li>
+            <li><a href="javascript:void(0)" id="download">Download</a></li>
+          </ul>
+          <form class="navbar-form navbar-left">
+            <div class="form-group" style="margin-right: 5px;">
+              <input class="form-control" id="type" placeholder="change municipality data" autocomplete="off">
+            </div>
+            <button class="btn btn-default" id="find">Find</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="row">
+          &emsp;Drap a label into the chart below&emsp;
+          <span class="badge">Gender</span>
+          <span class="label label-success" id="gender-all" draggable="true">&nbsp;Overall&nbsp;</span>
+          <span class="label label-success" id="gender-male" draggable="true">&nbsp;Male&nbsp;</span>
+          <span class="label label-success" id="gender-female" draggable="true">&nbsp;Female&nbsp;</span>
+          &emsp;
+          <span class="badge">Age</span>
+          <span class="label label-primary" id="age-all" draggable="true">&nbsp;All&nbsp;</span>
+          <span class="label label-primary" id="age-under" draggable="true">&nbsp;0 - 17&nbsp;</span>
+          <span class="label label-primary" id="age-adult" draggable="true">&nbsp;18 - 64&nbsp;</span>
+          <span class="label label-primary" id="age-over" draggable="true">&nbsp;65 - &nbsp;</span>
+        </div>
+      </div>
+      <div class="panel-body">
+        <div id="chart" style="border: 2px solid #969696;"></div>
+      </div>
+      <div class="panel-body">
+        <div id="map" style="border: 2px solid #969696;"></div>
+      </div>
+      <div class="panel-footer"></div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>

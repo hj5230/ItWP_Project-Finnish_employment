@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>StatisticPortal</title>
+    <link rel="shortcut icon" href="{%static 'img/favicon.ico'  %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/index/">StatisticPortal</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+          <ul class="nav navbar-nav">
+            <li><a href="/employ/">Employment</a></li>
+            <li><a href="/pension/">Pensioner</a></li>
+            <li><a href="javascript:void(0)" id="download">Download</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        StatisticPortal
+      </div>
+      <div class="panel-body">
+        <ul>
+          <li>Click "Employment" or "Pensioner" in the navbar to jump to the page showing employment or pensioner api data analysis</li>
+          <li>In Employmnet or Pensioner page:
+            <ul>
+							<li>Chart:
+								<ul>
+									<li>data in the chart shows employment or pensioner data for designated area, designated gender, designated age</li>
+									<li>drag labels in the header into the chart to change designated gender or age for employment or pensioner data in the chart</li>
+									<li>switch municipality by click a municipality in the map or enter a municipality in the input box and click "Find"</li>
+								</ul>
+							</li>
+							<li>Map:
+								<ul>
+									<li>mouse over municipality area to view employment or pensioner data, switch the layer to view data for different year</li>
+									<li>the higher the proportion of regional employment or pensioner compare with previous year, the closer the color is to green</li>
+									<li>click municipality area to switch data in the chart</li>
+								</ul>
+							</li>
+							<li>Click "Download" to save data in the chart as a PNG file</li>
+						</li>
+          </ul>
+          <li>In this project work, Django backend and database are not used</li>
+          <li>Following APIs are used:
+            <ul>
+              <li>Frappe-Chart</li>
+              <li>Leaflet</li>
+              <li>Bootstrap</li>
+              <li>html2canvas</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="panel-footer"></div>
+    </div>
+    <script src="{% static 'js/rm.js' %}"></script>
+  </body>
+</html>
